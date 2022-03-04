@@ -9,6 +9,10 @@ namespace Projeto_PW.Controllers
         public static List<ProdutoModel> lsProdutos = new List<ProdutoModel>();
         public IActionResult Index()
         {
+            ProdutoModel produto = new ProdutoModel();
+            produto.Descricao = "Mouse Gamer";
+            produto.Codigo = 3333;
+            lsProdutos.Add(produto);
             return View(lsProdutos);
         }
 
