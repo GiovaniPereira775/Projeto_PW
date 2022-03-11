@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +24,9 @@ namespace Projeto_PW
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<Contexto>(a => a.UseSqlServer(
+                "Server=C3PO;Database=0220482112012;Trusted_Connection=True;"));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
